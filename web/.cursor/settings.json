@@ -1,0 +1,4 @@
+{
+    "ai.commitMessagePrompt": "请用中文分析以下代码变更，生成简洁的 Git 提交说明。规则：\n1. 以 feat/fix 等类型开头（英文）并空一格。\n2. 描述变更核心点，用中文，控制在 50 字内。\n3. 如果是 bug 修复，提及问题位置。\n\n变更 diff：{diff}",
+    "ai.language": "zh-CN"  // 全局 AI 语言偏好为中文（可选）
+}
