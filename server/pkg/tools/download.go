@@ -2,14 +2,15 @@ package tools
 
 import (
 	"fmt"
-	"github.com/gin-gonic/gin"
-	"github.com/pkg/errors"
 	"io"
 	"net/url"
 	"os"
 	"path/filepath"
 	"strconv"
 	"strings"
+
+	"github.com/gin-gonic/gin"
+	"github.com/pkg/errors"
 )
 
 func CompressFilesToZipWithTmpDir(fileAbsPath, tmpDir string) (string, error) {
