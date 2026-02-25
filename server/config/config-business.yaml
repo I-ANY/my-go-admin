@@ -1,0 +1,33 @@
+business:
+  host: 0.0.0.0
+  port: 8091
+
+mysql:
+  host: 192.168.9.20
+  port: 3306
+  database: business
+  username: root
+  password: 123
+
+log:
+  level: debug
+
+redis:
+  host: 192.168.41.106
+  username:
+  password: "123456"
+  poolSize: 5
+  timeout: 5
+  db: 10
+
+
+clickhouse:
+  host: 127.0.0.1
+  port: 9000
+  database: business
+  username: default
+  password: 123456
+
+authClient:
+  address: 127.0.0.1:8095
+  connTimeoutSecond: 30

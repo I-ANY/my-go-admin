@@ -1,0 +1,30 @@
+cronjob:
+  host: 0.0.0.0
+  port: 8089
+
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  database: biz_auto
+  username: root
+  password: 123456
+
+log:
+  level: debug
+
+
+redis:
+  host: 127.0.0.1
+  #  username: "aaaaa"
+  password: "123456"
+  poolSize: 5
+  timeout: 5
+  db: 0
+
+
+clickhouse:
+  host: 127.0.0.1
+  port: 9000
+  database: biz_auto
+  username: default
+  password: 123456

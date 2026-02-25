@@ -1,0 +1,37 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: biz-auto-api-migrate-${DATETIME}-${BUILD_NUMBER}
+spec:
+  parallelism: 1
+  completions: 1
+  backoffLimit: 4
+  ttlSecondsAfterFinished: ${TTL_SECONDS}
+  template:
+    spec:
+      containers:
+        - args:
+            - migrate
+            - '-c'
+            - config-system.yaml
+          image: ${IMAGE_ADDR}
+          imagePullPolicy: IfNotPresent
+          name: migrate
+          resources:
+            requests:
+              cpu: '1'
+              memory: 2Gi
+          volumeMounts:
+            - mountPath: /app/config-system.yaml
+              name: config-vol
+              readOnly: true
+              subPath: config-system.yaml
+      volumes:
+        - configMap:
+            defaultMode: 420
+            items:
+              - key: config-system.yaml
+                path: config-system.yaml
+            name: biz-auto-system-conf
+          name: config-vol
+      restartPolicy: Never

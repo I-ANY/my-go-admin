@@ -1,0 +1,14 @@
+system:
+  host: 0.0.0.0
+  tokenExpireSec: 3600
+
+mysql:
+  host: 192.168.9.20
+  port: 3306
+  database: biz_auto
+  username: root
+  password: 123
+
+log:
+  level: debug
+
